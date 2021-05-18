@@ -6,8 +6,8 @@ Collection of useful code snippets
 | Number | Snippets |
 |------- | --------- |
 |1. | [Lazy loading forms on first scroll](#Lazy-loading-forms-on-first-scroll) |
-|2. | [Allow editor role to access 'appearance-->menu'](#Allow-editor-role-to-access-appearance---menu) |
-|3. | [Lazy load background images](#Lazy-load-background-images)
+|2. | [Lazy load background images](#Lazy-load-background-images) |
+|3. | [Allow editor role to access 'appearance-->menu'](#Allow-editor-role-to-access-appearance---menu) |
 |4. |
 |5. |
 |6. |
@@ -18,6 +18,58 @@ Collection of useful code snippets
 |11. |
 |12. |
 |13. |
+
+
+### Lazy loading forms on first scroll
+Will load the specified iframe src on first detection on a scroll
+```html
+<!-- forms.glacial.com script begins here -->
+<iframe allowTransparency="true" 
+        style="min-height:450px; height:inherit; overflow:auto;" 
+        width="100%" id="myFrame"
+        name="contactform123" marginwidth="0" marginheight="0" 
+        frameborder="0" src="about:blank"></iframe>
+<!-- forms.glacial.com script ends here -->
+<script>
+    window.onscroll = glacialLoadIframeOnScroll;
+    var glacialScrollCounter = 0; // Global Variable
+    function glacialLoadIframeOnScroll() {
+        if (glacialScrollCounter == 0) {
+            document.getElementById("myFrame").src = "https://forms.glacial.com/my-contact-form-FORMIDNUMBER.html";
+            glacialScrollCounter++;
+        }
+    }
+</script>
+```
+**[⬆ Back to Top](#table-of-contents)**
+
+### Lazy load background images
+```html
+<style>
+.lazy-background {background-image: url(https://cdn-12c7.kxcdn.com/images/golasik_net/ph.jpg); /* Placeholder image */}
+.lazy-background.visible {background-image: url(https://cdn-12c7.kxcdn.com/images/golasik_net/Tony-Simmons_lowres.jpg);}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-background"));
+  if ("IntersectionObserver" in window) {
+    let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          lazyBackgroundObserver.unobserve(entry.target);
+        }
+      });
+    });
+    lazyBackgrounds.forEach(function(lazyBackground) {
+      lazyBackgroundObserver.observe(lazyBackground);
+    });
+  }
+});
+</script>
+```
+**[⬆ Back to Top](#table-of-contents)**
 
 ### Allow editor role to access appearance--->menu
 ```php
@@ -54,57 +106,7 @@ add_action('admin_menu', 'hide_menu', 10);
 **[⬆ Back to Top](#table-of-contents)**
 
 
-### Lazy loading forms on first scroll
-Will load the specified iframe src on first detection on a scroll
-```html
-<!-- forms.glacial.com script begins here -->
-<iframe allowTransparency="true" 
-        style="min-height:450px; height:inherit; overflow:auto;" 
-        width="100%" id="myFrame"
-        name="contactform123" marginwidth="0" marginheight="0" 
-        frameborder="0" src="about:blank"></iframe>
-<!-- forms.glacial.com script ends here -->
-<script>
-    window.onscroll = glacialLoadIframeOnScroll;
-    var glacialScrollCounter = 0; // Global Variable
-    function glacialLoadIframeOnScroll() {
-        if (glacialScrollCounter == 0) {
-            document.getElementById("myFrame").src = "https://forms.glacial.com/my-contact-form-FORMIDNUMBER.html";
-            glacialScrollCounter++;
-        }
-    }
-</script>
-```
 
-### Lazy load background images
-```html
-<style>
-.lazy-background {background-image: url(https://cdn-12c7.kxcdn.com/images/golasik_net/ph.jpg); /* Placeholder image */}
-.lazy-background.visible {background-image: url(https://cdn-12c7.kxcdn.com/images/golasik_net/Tony-Simmons_lowres.jpg);}
-</style>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-background"));
-  if ("IntersectionObserver" in window) {
-    let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          lazyBackgroundObserver.unobserve(entry.target);
-        }
-      });
-    });
-    lazyBackgrounds.forEach(function(lazyBackground) {
-      lazyBackgroundObserver.observe(lazyBackground);
-    });
-  }
-});
-</script>
-```
-**[⬆ Back to Top](#table-of-contents)**
-
-**[⬆ Back to Top](#table-of-contents)**
 
 ### Eliminates the tabs and converts the content into a regular column on 767px screens and lower
 ```css
