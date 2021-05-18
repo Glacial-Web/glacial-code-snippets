@@ -3,9 +3,21 @@
 Collection of useful code snippets
 
 ### Table of Contents
-
-1 . [Lazy loading forms on first scroll](#Lazy-loading-forms-on-first-scroll)
-2. [Allow Editor Role to access 'appearance-->menu'](#Allow-Editor-Role-to-access-appearance--->menu)
+| Number | Snippets |
+|------- | --------- |
+|1. | [Lazy loading forms on first scroll](#Lazy-loading-forms-on-first-scroll) |
+|2. | [Allow Editor Role to access 'appearance-->menu'](#Allow-Editor-Role-to-access-appearance--->menu) |
+|3. |
+|4. |
+|5. |
+|6. |
+|7. |
+|8. |
+|9. |
+|10. |
+|11. |
+|12. |
+|13. |
 
 ### Allow Editor Role to access appearance--->menu
 ```php
@@ -39,6 +51,7 @@ function hide_menu() {
  
 add_action('admin_menu', 'hide_menu', 10);
 ```
+**[⬆ Back to Top](#table-of-contents)**
 
 
 ### Lazy loading forms on first scroll
