@@ -13,7 +13,8 @@ Collection of useful code snippets
 | [Load scripts based on screen size](#Load-scripts-based-on-screen-size)|
 | PHP |
 | [Allow WP editor role to access 'appearance-->menu'](#Allow-WP-editor-role-to-access-appearance---menu) |
-| [Add href to phone numbers in WP content](#Add-href-to-phone-numbers-in-WP-content) | 
+| [Add href to phone numbers in WP content](#Add-href-to-phone-numbers-in-WP-content) |
+| [Remove/replace/change Yoast breadcrumbs](#Remove-replace-change-Yoast-breadcrumbs) |
 | CSS |
 | [Kadence Blocks eliminates tabs and converts the content into a regular column on 767px screens and lower](#Kadence-Blocks-eliminates-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
 | [Anchor text fix for fixed nav header](#Anchor-text-fix-for-fixed-nav-header) |
@@ -190,6 +191,48 @@ function glacial_add_phone_href( $content ) {
 add_filter( 'the_content', 'glacial_add_phone_href' );
 ```
 
+**[⬆ &nbsp; Back to Top](#table-of-contents)**
+
+---
+
+### Remove/replace/change Yoast breadcrumbs
+
+```php
+
+// Change some of the Yoast breadcrumbs
+function glacial_remove_breadcrumb_link( $link_output, $link ) {
+	// Uses Page Title to match item
+	$text_to_remove = array('About Akari');
+        
+	foreach ( $text_to_remove as $item ) {
+        // If match remove link and out put text only
+		if ( $link['text'] == $item ) {
+			$link_output = $link['text'];
+		}
+	}
+
+	// Gather service pages, in this case using ACF field service_page
+	$service_pages = new WP_Query (
+		array(
+			'post_type'  => 'page',
+			'meta_key'   => 'service_page',
+			'meta_value' => true,
+		)
+	);
+
+	$services_text_to_add = $service_pages->posts;
+    // Add Services pillar page before any service pages
+	foreach ( $services_text_to_add as $text ) {
+		if ( $link['text'] == $text->post_title ) {
+			$link_output = '<span> <a href="' . get_permalink( 13 ) . '"> Services </a> » </span>' . $link_output;
+		}
+	}
+
+	return $link_output;
+}
+
+add_filter( 'wpseo_breadcrumb_single_link', 'glacial_remove_breadcrumb_link', 10, 2 );
+```
 **[⬆ &nbsp; Back to Top](#table-of-contents)**
 
 ---
