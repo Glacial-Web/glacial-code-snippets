@@ -233,6 +233,7 @@ function glacial_remove_breadcrumb_link( $link_output, $link ) {
 
 add_filter( 'wpseo_breadcrumb_single_link', 'glacial_remove_breadcrumb_link', 10, 2 );
 ```
+
 **[⬆ &nbsp; Back to Top](#table-of-contents)**
 
 ---
