@@ -9,6 +9,7 @@ Collection of useful code snippets
 | JS |
 | [Lazy loading forms on first scroll](#Lazy-loading-forms-on-first-scroll) |
 | [Lazy load background images](#Lazy-load-background-images) |
+|[Load page on mobile only 490px down the page](#Load-page-on-mobile-only-490px-down-the-page)|
 | PHP |
 | [Allow WP editor role to access 'appearance-->menu'](#Allow-WP-editor-role-to-access-appearance---menu) |
 | [Add href to phone numbers in WP content](#Add-href-to-phone-numbers-in-WP-content) | 
@@ -82,6 +83,19 @@ Will load the specified iframe src on first detection on a scroll
 **[⬆ Back to Top](#table-of-contents)**
 
 ---
+
+###Load page on mobile only 490px down the page
+
+```js
+var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+      if (viewportWidth < 767) {
+        window.scrollTo(0, 490);
+      }
+```
+**[⬆ Back to Top](#table-of-contents)**
+
+---
+
 ##PHP
 
 ---
