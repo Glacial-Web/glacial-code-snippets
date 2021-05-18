@@ -14,7 +14,7 @@ Collection of useful code snippets
 | [Allow WP editor role to access 'appearance-->menu'](#Allow-WP-editor-role-to-access-appearance---menu) |
 | [Add href to phone numbers in WP content](#Add-href-to-phone-numbers-in-WP-content) | 
 | CSS |
-| [**Kadence Blocks** eliminates the tabs and converts the content into a regular column on 767px screens and lower](#Kadence-Blocks-eliminates-the-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
+| [**Kadence Blocks** eliminates tabs and converts the content into a regular column on 767px screens and lower](#Kadence-Blocks-eliminates-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
 
 ---
 
@@ -179,7 +179,7 @@ add_filter( 'the_content', 'glacial_add_phone_href' );
 
 ---
 
-### Kadence Blocks - Eliminates the tabs and converts the content into a regular column on 767px screens and lower
+### Kadence Blocks eliminates tabs and converts the content into a regular column on 767px screens and lower
 
 ```css
 @media (max-width: 767px) {
