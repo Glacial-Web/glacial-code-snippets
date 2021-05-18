@@ -13,7 +13,7 @@ Collection of useful code snippets
 | [Allow WP editor role to access 'appearance-->menu'](#Allow-WP-editor-role-to-access-appearance---menu) |
 | CSS |
 |[Eliminates the tabs and converts the content into a regular column on 767px screens and lower](#Eliminates-the-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
-
+---
 ### Lazy loading forms on first scroll
 
 Will load the specified iframe src on first detection on a scroll
