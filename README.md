@@ -221,7 +221,6 @@ add_filter( 'the_content', 'glacial_add_phone_href' );
 ### Anchor text fix for fixed nav header
 
 ```html
-
 <div id="zoom" class="anchor"></div>
 
 <style>
@@ -235,18 +234,16 @@ add_filter( 'the_content', 'glacial_add_phone_href' );
 or
 
 ```html
-
-<a id="anchorToGoTo" class="anchor-top-fix"></a>
+<a id="myAnchorId" class="anchor-top-fix"></a>
 
 <style>
     .anchor-top-fix {
         display: block;
         position: relative;
-        top: -150px;
+        top: -150px; /*Distance from top*/
         visibility: hidden;
     }
 </style>
-
 ```
 
 **[⬆ &nbsp; Back to Top](#table-of-contents)**
