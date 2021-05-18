@@ -9,15 +9,16 @@ Collection of useful code snippets
 | JS |
 | [Lazy loading forms on first scroll](#Lazy-loading-forms-on-first-scroll) |
 | [Lazy load background images](#Lazy-load-background-images) |
-|[Load page on mobile only 490px down the page](#Load-page-on-mobile-only-490px-down-the-page)|
+| [Load page on mobile only 490px down the page](#Load-page-on-mobile-only-490px-down-the-page)|
 | PHP |
 | [Allow WP editor role to access 'appearance-->menu'](#Allow-WP-editor-role-to-access-appearance---menu) |
 | [Add href to phone numbers in WP content](#Add-href-to-phone-numbers-in-WP-content) | 
 | CSS |
-|[Eliminates the tabs and converts the content into a regular column on 767px screens and lower](#Eliminates-the-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
+| [Eliminates the tabs and converts the content into a regular column on 767px screens and lower](#Eliminates-the-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
+
 ---
 
-##JS
+## JS
 
 ---
 
@@ -50,7 +51,9 @@ Will load the specified iframe src on first detection on a scroll
 ---
 
 ### Lazy load background images
+
 ```html
+
 <style>
     .lazy-background {
         background-image: url(https://cdn-12c7.kxcdn.com/images/golasik_net/ph.jpg); /* Placeholder image */
@@ -80,25 +83,28 @@ Will load the specified iframe src on first detection on a scroll
     });
 </script>
 ```
+
 **[⬆ Back to Top](#table-of-contents)**
 
 ---
 
-###Load page on mobile only 490px down the page
+### Load page on mobile only 490px down the page
 
 ```js
 var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-      if (viewportWidth < 767) {
-        window.scrollTo(0, 490);
-      }
+if (viewportWidth < 767) {
+    window.scrollTo(0, 490);
+}
 ```
+
 **[⬆ Back to Top](#table-of-contents)**
 
 ---
 
-##PHP
+## PHP
 
 ---
+
 ### Allow WP editor role to access appearance--->menu
 
 ```php
@@ -132,10 +138,12 @@ function hide_menu() {
  
 add_action('admin_menu', 'hide_menu', 10);
 ```
+
 **[⬆ Back to Top](#table-of-contents)**
 
 ---
-###Add href to phone numbers in WP content
+
+### Add href to phone numbers in WP content
 
 ```php
 function glacial_add_phone_href( $content ) {
@@ -167,7 +175,7 @@ add_filter( 'the_content', 'glacial_add_phone_href' );
 
 ---
 
-##CSS
+## CSS
 
 ---
 
