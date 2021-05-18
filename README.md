@@ -14,7 +14,7 @@ Collection of useful code snippets
 | PHP |
 | [Allow WP editor role to access 'appearance-->menu'](#Allow-WP-editor-role-to-access-appearance---menu) |
 | [Add href to phone numbers in WP content](#Add-href-to-phone-numbers-in-WP-content) |
-| [Remove/replace/change Yoast breadcrumbs](#Remove-replace-change-Yoast-breadcrumbs) |
+| [Remove/replace/change Yoast breadcrumbs](#Removereplacechange-Yoast-breadcrumbs) |
 | CSS |
 | [Kadence Blocks eliminates tabs and converts the content into a regular column on 767px screens and lower](#Kadence-Blocks-eliminates-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
 | [Anchor text fix for fixed nav header](#Anchor-text-fix-for-fixed-nav-header) |
