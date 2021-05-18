@@ -11,7 +11,6 @@ Collection of useful code snippets
 | [Lazy load background images](#Lazy-load-background-images) |
 | PHP |
 | [Allow editor role to access 'appearance-->menu'](#Allow-editor-role-to-access-appearance---menu) |
-|
 | CSS |
 |[Eliminates the tabs and converts the content into a regular column on 767px screens and lower](#Eliminates-the-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
 
