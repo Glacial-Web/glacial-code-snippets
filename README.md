@@ -84,7 +84,7 @@ Will load the specified iframe src on first detection on a scroll
 </script>
 ```
 
-**[⬆ Back to Top](#table-of-contents)**
+**[⬆ &nbsp; Back to Top](#table-of-contents)**
 
 ---
 
