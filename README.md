@@ -11,9 +11,15 @@ Collection of useful code snippets
 | [Lazy load background images](#Lazy-load-background-images) |
 | PHP |
 | [Allow WP editor role to access 'appearance-->menu'](#Allow-WP-editor-role-to-access-appearance---menu) |
+| [Add href to phone numbers in WP content](#Add-href-to-phone-numbers-in-WP-content) | 
 | CSS |
 |[Eliminates the tabs and converts the content into a regular column on 767px screens and lower](#Eliminates-the-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
 ---
+
+##JS
+
+---
+
 ### Lazy loading forms on first scroll
 
 Will load the specified iframe src on first detection on a scroll
@@ -76,7 +82,9 @@ Will load the specified iframe src on first detection on a scroll
 **[⬆ Back to Top](#table-of-contents)**
 
 ---
+##PHP
 
+---
 ### Allow WP editor role to access appearance--->menu
 
 ```php
@@ -111,6 +119,41 @@ function hide_menu() {
 add_action('admin_menu', 'hide_menu', 10);
 ```
 **[⬆ Back to Top](#table-of-contents)**
+
+---
+###Add href to phone numbers in WP content
+
+```php
+function glacial_add_phone_href( $content ) {
+	if ( ( is_singular() ) && ( is_main_query() ) ) {
+        // Simply add phone numbers here
+		$phone_numbers = array(
+			'(920) 452-5400',
+			'(800) 551-EYES'
+		);
+		$replacement = [];
+		foreach ( $phone_numbers as $phone_number ) {
+			if ( preg_match( '/[a-z]/i', $phone_number ) ) {
+				$change_letters = strtr( $phone_number, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "22233344455566677778889999" );
+				$href           = preg_replace( '/\D/', '', $change_letters );
+			} else {
+				$href = preg_replace( '/\D/', '', $phone_number );
+			}
+			$html = '<a href="tel:+1' . $href . '">' . $phone_number . '</a>';
+			$replacement[] = $html;
+		}
+		$content = str_replace( $phone_numbers, $replacement, $content );
+	}
+	return $content;
+}
+add_filter( 'the_content', 'glacial_add_phone_href' );
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+---
+
+##CSS
 
 ---
 
