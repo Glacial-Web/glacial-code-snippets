@@ -55,7 +55,7 @@ add_action('admin_menu', 'hide_menu', 10);
 
 
 ### Lazy loading forms on first scroll
-Will load the specified iframe on first detection on a scroll
+Will load the specified iframe src on first detection on a scroll
 ```html
 <!-- forms.glacial.com script begins here -->
 <iframe allowTransparency="true" 
