@@ -86,3 +86,5 @@ Will load the specified iframe src on first detection on a scroll
   .kt-tabs-wrap .wp-block-kadence-tab[role="tabpanel"] {display: block !important;}
 }
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
