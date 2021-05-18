@@ -3,31 +3,28 @@
 Collection of useful code snippets
 
 ### Table of Contents
-| Number | Snippets |
-|------- | --------- |
-|1. | [Lazy loading forms on first scroll](#Lazy-loading-forms-on-first-scroll) |
-|2. | [Lazy load background images](#Lazy-load-background-images) |
-|3. | [Allow editor role to access 'appearance-->menu'](#Allow-editor-role-to-access-appearance---menu) |
-|4. |
-|5. |
-|6. |
-|7. |
-|8. | [Eliminates the tabs and converts the content into a regular column on 767px screens and lower](#Eliminates-the-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
-|9. |
-|10. |
-|11. |
-|12. |
-|13. |
 
+| Snippets |
+|------- | 
+| **JS** |
+| [Lazy loading forms on first scroll](#Lazy-loading-forms-on-first-scroll) |
+| [Lazy load background images](#Lazy-load-background-images) |
+| PHP |
+| [Allow editor role to access 'appearance-->menu'](#Allow-editor-role-to-access-appearance---menu) |
+|
+| CSS |
+|[Eliminates the tabs and converts the content into a regular column on 767px screens and lower](#Eliminates-the-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
 
 ### Lazy loading forms on first scroll
+
 Will load the specified iframe src on first detection on a scroll
+
 ```html
 <!-- forms.glacial.com script begins here -->
-<iframe allowTransparency="true" 
-        style="min-height:450px; height:inherit; overflow:auto;" 
+<iframe allowTransparency="true"
+        style="min-height:450px; height:inherit; overflow:auto;"
         width="100%" id="myFrame"
-        name="contactform123" marginwidth="0" marginheight="0" 
+        name="contactform123" marginwidth="0" marginheight="0"
         frameborder="0" src="about:blank"></iframe>
 <!-- forms.glacial.com script ends here -->
 <script>
@@ -41,37 +38,48 @@ Will load the specified iframe src on first detection on a scroll
     }
 </script>
 ```
+
 **[⬆ Back to Top](#table-of-contents)**
+
+---
 
 ### Lazy load background images
 ```html
 <style>
-.lazy-background {background-image: url(https://cdn-12c7.kxcdn.com/images/golasik_net/ph.jpg); /* Placeholder image */}
-.lazy-background.visible {background-image: url(https://cdn-12c7.kxcdn.com/images/golasik_net/Tony-Simmons_lowres.jpg);}
+    .lazy-background {
+        background-image: url(https://cdn-12c7.kxcdn.com/images/golasik_net/ph.jpg); /* Placeholder image */
+    }
+
+    .lazy-background.visible {
+        background-image: url(https://cdn-12c7.kxcdn.com/images/golasik_net/Tony-Simmons_lowres.jpg);
+    }
 </style>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-background"));
-  if ("IntersectionObserver" in window) {
-    let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          lazyBackgroundObserver.unobserve(entry.target);
+    document.addEventListener("DOMContentLoaded", function () {
+        var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-background"));
+        if ("IntersectionObserver" in window) {
+            let lazyBackgroundObserver = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        lazyBackgroundObserver.unobserve(entry.target);
+                    }
+                });
+            });
+            lazyBackgrounds.forEach(function (lazyBackground) {
+                lazyBackgroundObserver.observe(lazyBackground);
+            });
         }
-      });
     });
-    lazyBackgrounds.forEach(function(lazyBackground) {
-      lazyBackgroundObserver.observe(lazyBackground);
-    });
-  }
-});
 </script>
 ```
 **[⬆ Back to Top](#table-of-contents)**
 
+---
+
 ### Allow editor role to access appearance--->menu
+
 ```php
 // Allow editors to see access the Menus page under Appearance but hide other options
 // Note that users who know the correct path to the hidden options can still access them
@@ -105,15 +113,20 @@ add_action('admin_menu', 'hide_menu', 10);
 ```
 **[⬆ Back to Top](#table-of-contents)**
 
-
-
+---
 
 ### Eliminates the tabs and converts the content into a regular column on 767px screens and lower
+
 ```css
 @media (max-width: 767px) {
-  /** CONVERT KADENCE TAB BLOCK TO STACKED COLUMN ***/
-  .kt-tabs-accordion-title {display:none !important;}
-  .kt-tabs-wrap .wp-block-kadence-tab[role="tabpanel"] {display: block !important;}
+    /** CONVERT KADENCE TAB BLOCK TO STACKED COLUMN ***/
+    .kt-tabs-accordion-title {
+        display: none !important;
+    }
+
+    .kt-tabs-wrap .wp-block-kadence-tab[role="tabpanel"] {
+        display: block !important;
+    }
 }
 ```
 
