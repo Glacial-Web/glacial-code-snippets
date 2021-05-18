@@ -10,13 +10,15 @@ Collection of useful code snippets
 | [Lazy loading forms on first scroll](#Lazy-loading-forms-on-first-scroll) |
 | [Lazy load background images](#Lazy-load-background-images) |
 | [Load page on mobile only 490px down the page](#Load-page-on-mobile-only-490px-down-the-page)|
+| [Load scripts based on screen size](#Load-scripts-based-on-screen-size)|
 | PHP |
 | [Allow WP editor role to access 'appearance-->menu'](#Allow-WP-editor-role-to-access-appearance---menu) |
 | [Add href to phone numbers in WP content](#Add-href-to-phone-numbers-in-WP-content) | 
 | CSS |
-| [**Kadence Blocks** eliminates tabs and converts the content into a regular column on 767px screens and lower](#Kadence-Blocks-eliminates-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
+| [**Kadence
+Blocks** eliminates tabs and converts the content into a regular column on 767px screens and lower](#Kadence-Blocks-eliminates-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
 | [Anchor text fix for fixed nav header](#Anchor-text-fix-for-fixed-nav-header) |
- 
+
 ---
 
 ## JS
@@ -101,6 +103,23 @@ if (viewportWidth < 767) {
 **[⬆ &nbsp; Back to Top](#table-of-contents)**
 
 ---
+
+### Load scripts based on screen size
+
+```js
+if (window.screen.width > 991) { // Only load script if screen size is greater than 991px
+    var head = document.getElementsByTagName('head')[0]; // Change to footer if it exists on the site
+    var script = document.createElement('script');
+    script.src = 'https://example.com/externalscript.js'; // External script url
+    script.type = 'text/javascript';
+    script.async = '1';
+    script.setAttribute('token', '2'); // If your script has special attributes, use setAttribute, whenever you're unsure about a scriptattribute, just use this to be safe
+    script.id = 'example_external';
+    head.appendChild(script);
+}
+```
+
+**[⬆ &nbsp; Back to Top](#table-of-contents)**
 
 ## PHP
 
@@ -212,9 +231,11 @@ add_filter( 'the_content', 'glacial_add_phone_href' );
     }
 </style>
 ```
+
 or
 
 ```html
+
 <a id="anchorToGoTo" class="anchor-top-fix"></a>
 
 <style>
@@ -227,6 +248,7 @@ or
 </style>
 
 ```
+
 **[⬆ &nbsp; Back to Top](#table-of-contents)**
 
 ---
