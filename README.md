@@ -6,7 +6,7 @@ Collection of useful code snippets
 
 | Snippets |
 |------- | 
-| **JS** |
+| JS |
 | [Lazy loading forms on first scroll](#Lazy-loading-forms-on-first-scroll) |
 | [Lazy load background images](#Lazy-load-background-images) |
 | PHP |
