@@ -46,7 +46,7 @@ Will load the specified iframe src on first detection on a scroll
 </script>
 ```
 
-**[⬆ Back to Top](#table-of-contents)**
+**[⬆ &nbsp; Back to Top](#table-of-contents)**
 
 ---
 
@@ -97,7 +97,7 @@ if (viewportWidth < 767) {
 }
 ```
 
-**[⬆ Back to Top](#table-of-contents)**
+**[⬆ &nbsp; Back to Top](#table-of-contents)**
 
 ---
 
@@ -139,7 +139,7 @@ function hide_menu() {
 add_action('admin_menu', 'hide_menu', 10);
 ```
 
-**[⬆ Back to Top](#table-of-contents)**
+**[⬆ &nbsp; Back to Top](#table-of-contents)**
 
 ---
 
@@ -171,7 +171,7 @@ function glacial_add_phone_href( $content ) {
 add_filter( 'the_content', 'glacial_add_phone_href' );
 ```
 
-**[⬆ Back to Top](#table-of-contents)**
+**[⬆ &nbsp; Back to Top](#table-of-contents)**
 
 ---
 
@@ -194,5 +194,5 @@ add_filter( 'the_content', 'glacial_add_phone_href' );
 }
 ```
 
-**[⬆ Back to Top](#table-of-contents)**
+**[⬆ &nbsp; Back to Top](#table-of-contents)**
 
