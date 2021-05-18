@@ -10,7 +10,7 @@ Collection of useful code snippets
 | [Lazy loading forms on first scroll](#Lazy-loading-forms-on-first-scroll) |
 | [Lazy load background images](#Lazy-load-background-images) |
 | PHP |
-| [Allow editor role to access 'appearance-->menu'](#Allow-editor-role-to-access-appearance---menu) |
+| [Allow WP editor role to access 'appearance-->menu'](#Allow-WP-editor-role-to-access-appearance---menu) |
 | CSS |
 |[Eliminates the tabs and converts the content into a regular column on 767px screens and lower](#Eliminates-the-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
 
@@ -77,7 +77,7 @@ Will load the specified iframe src on first detection on a scroll
 
 ---
 
-### Allow editor role to access appearance--->menu
+### Allow WP editor role to access appearance--->menu
 
 ```php
 // Allow editors to see access the Menus page under Appearance but hide other options
