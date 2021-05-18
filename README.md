@@ -14,7 +14,9 @@ Collection of useful code snippets
 | [Allow WP editor role to access 'appearance-->menu'](#Allow-WP-editor-role-to-access-appearance---menu) |
 | [Add href to phone numbers in WP content](#Add-href-to-phone-numbers-in-WP-content) | 
 | CSS |
-| [**Kadence Blocks** eliminates tabs and converts the content into a regular column on 767px screens and lower](#Kadence-Blocks-eliminates-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
+| [**Kadence
+Blocks** eliminates tabs and converts the content into a regular column on 767px screens and lower](#Kadence-Blocks-eliminates-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
+| [Anchor text fix for fixed nav header](#Anchor-text-fix-for-fixed-nav-header) |
 
 ---
 
@@ -196,3 +198,36 @@ add_filter( 'the_content', 'glacial_add_phone_href' );
 
 **[⬆ &nbsp; Back to Top](#table-of-contents)**
 
+---
+
+### Anchor text fix for fixed nav header
+
+```html
+
+<div id="zoom" class="anchor"></div>
+
+<style>
+    .anchor {
+        padding-top: 122px;
+        margin-top: -122px;
+    }
+</style>
+```
+or
+
+```html
+<a id="anchorToGoTo" class="anchor-top-fix"></a>
+
+<style>
+    .anchor-top-fix {
+        display: block;
+        position: relative;
+        top: -150px;
+        visibility: hidden;
+    }
+</style>
+
+```
+**[⬆ &nbsp; Back to Top](#table-of-contents)**
+
+---
