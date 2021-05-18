@@ -12,7 +12,7 @@ Collection of useful code snippets
 |5. |
 |6. |
 |7. |
-|8. |
+|8. | [Eliminates the tabs and converts the content into a regular column on 767px screens and lower](#Eliminates-the-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
 |9. |
 |10. |
 |11. |
@@ -77,3 +77,12 @@ Will load the specified iframe src on first detection on a scroll
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
+
+### Eliminates the tabs and converts the content into a regular column on 767px screens and lower
+```css
+@media (max-width: 767px) {
+  /** CONVERT KADENCE TAB BLOCK TO STACKED COLUMN ***/
+  .kt-tabs-accordion-title {display:none !important;}
+  .kt-tabs-wrap .wp-block-kadence-tab[role="tabpanel"] {display: block !important;}
+}
+```
