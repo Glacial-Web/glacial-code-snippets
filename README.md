@@ -121,6 +121,8 @@ if (window.screen.width > 991) { // Only load script if screen size is greater t
 
 **[⬆ &nbsp; Back to Top](#table-of-contents)**
 
+---
+
 ## PHP
 
 ---
