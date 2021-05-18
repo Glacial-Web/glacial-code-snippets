@@ -15,8 +15,7 @@ Collection of useful code snippets
 | [Allow WP editor role to access 'appearance-->menu'](#Allow-WP-editor-role-to-access-appearance---menu) |
 | [Add href to phone numbers in WP content](#Add-href-to-phone-numbers-in-WP-content) | 
 | CSS |
-| [**Kadence
-Blocks** eliminates tabs and converts the content into a regular column on 767px screens and lower](#Kadence-Blocks-eliminates-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
+| [Kadence Blocks eliminates tabs and converts the content into a regular column on 767px screens and lower](#Kadence-Blocks-eliminates-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
 | [Anchor text fix for fixed nav header](#Anchor-text-fix-for-fixed-nav-header) |
 
 ---
@@ -221,6 +220,7 @@ add_filter( 'the_content', 'glacial_add_phone_href' );
 ### Anchor text fix for fixed nav header
 
 ```html
+
 <div id="zoom" class="anchor"></div>
 
 <style>
@@ -234,6 +234,7 @@ add_filter( 'the_content', 'glacial_add_phone_href' );
 or
 
 ```html
+
 <a id="myAnchorId" class="anchor-top-fix"></a>
 
 <style>
