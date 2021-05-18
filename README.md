@@ -6,7 +6,7 @@ Collection of useful code snippets
 | Number | Snippets |
 |------- | --------- |
 |1. | [Lazy loading forms on first scroll](#Lazy-loading-forms-on-first-scroll) |
-|2. | [Allow Editor Role to access 'appearance-->menu'](#Allow-Editor-Role-to-access-appearance--->menu) |
+|2. | [Allow Editor Role to access 'appearance-->menu'](#Allow-Editor-Role-to-access-appearance---menu) |
 |3. |
 |4. |
 |5. |
