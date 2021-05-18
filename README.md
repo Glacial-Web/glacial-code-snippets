@@ -6,8 +6,8 @@ Collection of useful code snippets
 | Number | Snippets |
 |------- | --------- |
 |1. | [Lazy loading forms on first scroll](#Lazy-loading-forms-on-first-scroll) |
-|2. | [Allow Editor Role to access 'appearance-->menu'](#Allow-Editor-Role-to-access-appearance---menu) |
-|3. |
+|2. | [Allow editor role to access 'appearance-->menu'](#Allow-editor-role-to-access-appearance---menu) |
+|3. | [Lazy load background images](#Lazy-load-background-images)
 |4. |
 |5. |
 |6. |
@@ -19,7 +19,7 @@ Collection of useful code snippets
 |12. |
 |13. |
 
-### Allow Editor Role to access appearance--->menu
+### Allow editor role to access appearance--->menu
 ```php
 // Allow editors to see access the Menus page under Appearance but hide other options
 // Note that users who know the correct path to the hidden options can still access them
@@ -76,6 +76,34 @@ Will load the specified iframe src on first detection on a scroll
 </script>
 ```
 
+### Lazy load background images
+```html
+<style>
+.lazy-background {background-image: url(https://cdn-12c7.kxcdn.com/images/golasik_net/ph.jpg); /* Placeholder image */}
+.lazy-background.visible {background-image: url(https://cdn-12c7.kxcdn.com/images/golasik_net/Tony-Simmons_lowres.jpg);}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-background"));
+  if ("IntersectionObserver" in window) {
+    let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          lazyBackgroundObserver.unobserve(entry.target);
+        }
+      });
+    });
+    lazyBackgrounds.forEach(function(lazyBackground) {
+      lazyBackgroundObserver.observe(lazyBackground);
+    });
+  }
+});
+</script>
+```
+**[⬆ Back to Top](#table-of-contents)**
+
 **[⬆ Back to Top](#table-of-contents)**
 
 ### Eliminates the tabs and converts the content into a regular column on 767px screens and lower
@@ -88,3 +116,4 @@ Will load the specified iframe src on first detection on a scroll
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
+
