@@ -18,6 +18,7 @@ Collection of useful code snippets
 | CSS |
 | [Kadence Blocks eliminates tabs and converts the content into a regular column on 767px screens and lower](#Kadence-Blocks-eliminates-tabs-and-converts-the-content-into-a-regular-column-on-767px-screens-and-lower) |
 | [Anchor text fix for fixed nav header](#Anchor-text-fix-for-fixed-nav-header) |
+| [Images 50% Width](#Images-50%-Width) |
 
 ---
 
@@ -291,6 +292,25 @@ or
         visibility: hidden;
     }
 </style>
+```
+
+**[⬆ &nbsp; Back to Top](#table-of-contents)**
+
+---
+
+### Images 50% Width
+
+```
+/*50% float image Additional Class: img-50 */
+.wp-block-image.img-50 figure {
+    width:49% !important;
+}
+
+@media (max-width: 1080px) {
+    .wp-block-image.img-50 figure {
+        width:100% !important;
+    }
+}
 ```
 
 **[⬆ &nbsp; Back to Top](#table-of-contents)**
