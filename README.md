@@ -330,8 +330,16 @@ or
     padding: 0;
 }
 
-@media (max-width: 1080px) {
-
+@media (max-width: 991px) {
+#navigation ul li:hover ul li:hover ul {
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
 }
 ```
 
