@@ -316,3 +316,24 @@ or
 **[⬆ &nbsp; Back to Top](#table-of-contents)**
 
 ---
+
+### Third Level Menu's
+
+```
+#navigation ul li:hover ul li:hover ul {
+    left: 100%;
+    top: 0;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 1080px) {
+
+}
+```
+
+**[⬆ &nbsp; Back to Top](#table-of-contents)**
+
+---
